@@ -11,3 +11,10 @@
     Luma
     Sera
     Custom
+
+## NextJS:
+1. Caching:
+    - no-store
+    - no-cache
+    - revalidate
+    - tags

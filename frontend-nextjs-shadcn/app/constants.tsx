@@ -1,0 +1,1 @@
+export const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || "http://localhost:1337";
