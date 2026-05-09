@@ -1,0 +1,104 @@
+############################
+# Dependencies
+############################
+
+node_modules/
+
+############################
+# Environment & secrets
+############################
+
+**/.env
+**/.env.*
+!**/.env.example
+
+############################
+# Logs & debug
+############################
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+############################
+# OS
+############################
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+############################
+# Editors / tooling
+############################
+
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+.eslintcache
+
+############################
+# Frontend — Next.js (frontend-nextjs-shadcn)
+############################
+
+frontend-nextjs-shadcn/.next/
+frontend-nextjs-shadcn/out/
+frontend-nextjs-shadcn/build/
+frontend-nextjs-shadcn/.vercel/
+frontend-nextjs-shadcn/.turbo/
+frontend-nextjs-shadcn/coverage/
+frontend-nextjs-shadcn/*.tsbuildinfo
+frontend-nextjs-shadcn/next-env.d.ts
+
+# Keep opting into Yarn if you use it in the frontend
+frontend-nextjs-shadcn/.pnp
+frontend-nextjs-shadcn/.pnp.*
+
+############################
+# Backend — Strapi (backend-strapi)
+############################
+
+backend-strapi/.tmp/
+backend-strapi/.strapi/
+backend-strapi/dist/
+backend-strapi/build/
+backend-strapi/exports/
+backend-strapi/.strapi-updater.json
+backend-strapi/.strapi-cloud.json
+backend-strapi/license.txt
+
+backend-strapi/public/uploads/*
+!backend-strapi/public/uploads/.gitkeep
+
+############################
+# Tests
+############################
+
+coverage/
+*.lcov
+.nyc_output/
+
+############################
+# Misc
+############################
+
+*.pem
+*.sqlite
+*.sqlite3
