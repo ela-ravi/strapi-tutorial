@@ -24,3 +24,6 @@
     - Using URL library (inbuilt with typescript) to build api url (basedomain + path + searchQuery)
     - fetch the strapi data for Homepage (/api/home-page (path))
     - `{ cache: 'no-store' }` on that `fetch`: Next.js normally caches `fetch` results (so the same URL can reuse old JSON). `no-store` turns that off—every request goes to Strapi again, which matches “I’m editing in the admin and I want refresh to show it” while wiring things up (later you can use `revalidate` (cache apis for some seconds) / tags (control apis refreshment based on tags directly from CMS) if you want caching with controlled freshness).
+
+
+# 6. Refer https://strapi.io/blog/epic-next-js-15-tutorial-part-3-finishup-up-the-homepage-features-section-top-navigation-and-footer

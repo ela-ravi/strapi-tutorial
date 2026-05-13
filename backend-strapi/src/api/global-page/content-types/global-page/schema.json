@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_pages",
+  "info": {
+    "singularName": "global-page",
+    "pluralName": "global-pages",
+    "displayName": "Global Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "header": {
+      "type": "component",
+      "component": "layout.header",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "layout.footer",
+      "repeatable": false
+    }
+  }
+}
