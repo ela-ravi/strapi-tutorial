@@ -1,5 +1,8 @@
-import { apiDomain } from "@/app/constants";
+
 import Link from "next/link";
+import { StrapiImage } from "./StrapiImage";
+import { getStrapiURL } from "@/lib/utils";
+import { TStrapiComponent } from "@/types";
 
 interface ImageProps {
     id: string;
@@ -13,14 +16,11 @@ interface LinkProps {
     isExternal: boolean;
 }
 
-interface HeroSectionProps {
-    data: {
-        __component: string;
-        heading: string;
-        subHeading: string;
-        image: ImageProps;
-        link: LinkProps;
-    }
+export interface IHeroSectionProps extends TStrapiComponent {
+    heading: string;
+    subHeading: string;
+    image: ImageProps;
+    link: LinkProps;
 }
 
 const styles = {
@@ -34,27 +34,28 @@ const styles = {
     "mt-8 inline-flex items-center justify-center px-6 py-3 text-base font-medium text-black bg-white rounded-md shadow hover:bg-gray-100 transition-colors",
 };
 
-export function HeroSection({ data }: Readonly<HeroSectionProps>) {
+export function HeroSection({ data }: {data: Readonly<IHeroSectionProps>}) {
   if (!data) return null;
 
   const { heading, subHeading, image, link } = data;
 
-  const imageSrc = apiDomain + image.url;
+  const imageSrc = getStrapiURL() + image.url;
 
   console.dir(data, { depth: null });
   return (
-    <header className={styles.header}>
-      <img
-        alt="Background"
-        className={styles.backgroundImage}
-        height={1080}
-        src={imageSrc}
-        style={{
-          aspectRatio: "1920/1080",
-          objectFit: "cover",
-        }}
-        width={1920}
-      />
+    <div className={styles.header}>
+        <StrapiImage
+            src={imageSrc}
+            alt={image.alternativeText}
+            width={1920}
+            height={1080}
+            className={styles.backgroundImage}
+            style={{
+                aspectRatio: "1920/1080",
+                objectFit: "cover",
+              }}
+            loading="eager"
+        />
       <div className={styles.overlay}>
         <h1 className={styles.heading}>{heading}</h1>
         <p className={styles.subheading}>{subHeading}</p>
@@ -62,6 +63,6 @@ export function HeroSection({ data }: Readonly<HeroSectionProps>) {
           {link.text}
         </Link>
       </div>
-    </header>
+    </div>
   );
 }
